@@ -1,0 +1,32 @@
+{
+  "name": "lol-match-data-miner",
+  "version": "1.0.0",
+  "description": "Get a ton of data from any users recent matches.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusyanez/lol-match-data-miner.git"
+  },
+  "keywords": [
+    "riot",
+    "api",
+    "league",
+    "of",
+    "legends",
+    "match",
+    "data",
+    "scraper"
+  ],
+  "author": "jesusyanez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusyanez/lol-match-data-miner/issues"
+  },
+  "homepage": "https://github.com/jesusyanez/lol-match-data-miner#readme",
+  "dependencies": {
+    "axios": "^1.2.2"
+  }
+}
