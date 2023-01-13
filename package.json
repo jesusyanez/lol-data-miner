@@ -1,5 +1,5 @@
 {
-  "name": "lol-match-data-miner",
+  "name": "lol-data-miner",
   "version": "1.0.0",
   "description": "Get a ton of data from any users recent matches.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jesusyanez/lol-match-data-miner.git"
+    "url": "git+https://github.com/jesusyanez/lol-data-miner.git"
   },
   "keywords": [
     "riot",
@@ -23,9 +23,9 @@
   "author": "jesusyanez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jesusyanez/lol-match-data-miner/issues"
+    "url": "https://github.com/jesusyanez/lol-data-miner/issues"
   },
-  "homepage": "https://github.com/jesusyanez/lol-match-data-miner#readme",
+  "homepage": "https://github.com/jesusyanez/lol-data-miner#readme",
   "dependencies": {
     "axios": "^1.2.2"
   }
