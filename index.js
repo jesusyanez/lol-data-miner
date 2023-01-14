@@ -12,28 +12,20 @@ exports.getRecentMatches = async function (
     const queueType = await adjustQueue(queue);
     const regionCodes = await getRegionCodes(server);
     const accountId = await getAccountId(regionCodes[0], summonerName, apiKey);
-    // console.log(accountId);
-    // API endpoint for match id list
+    // Endpoint to get match id list
     const matchListEndpoint = `https://${regionCodes[1]}.api.riotgames.com/lol/match/v5/matches/by-puuid/{accountId}/ids?${queueType}&start=0&count=${games}&api_key=${apiKey}`;
-    //API endpoint for detail match data
+    // Endpoint to get detailed single match data
     const matchDetailEndpoint = `https://${regionCodes[1]}.api.riotgames.com/lol/match/v5/matches/{matchId}?api_key=${apiKey}`;
     const matchListResponse = await axios.get(
       matchListEndpoint.replace("{accountId}", accountId)
     );
     const matchIds = matchListResponse.data;
-    // console.log(matchIds);
+    // Hit detailed endpoint with each matchId
     const requests = matchIds.map((matchId) =>
       axios.get(matchDetailEndpoint.replace("{matchId}", matchId))
     );
     const responses = await Promise.all(requests);
     const matches = responses.map((response) => response.data);
-    // const completeData = {
-    //   user: summonerName,
-    //   puuid: accountId,
-    //   matches: matchIds,
-    //   matchData: matches,
-    // };
-    // return completeData;
     return matches;
   } catch (err) {
     console.log(err);
@@ -51,7 +43,7 @@ async function getAccountId(region, summonerName, apiKey) {
   }
 }
 
-// Gets specific API region prefix for server
+// Gets specific API region prefixes for server
 async function getRegionCodes(server) {
   try {
     const regionCodes = {
